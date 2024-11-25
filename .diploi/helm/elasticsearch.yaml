@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: elasticsearch
+spec:
+  selector:
+    matchLabels:
+      app: elasticsearch
+  serviceName: elasticsearch
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: elasticsearch:8.16.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9200
+              name: elasticsearch-http
+            - containerPort: 9300
+              name: elasticsearch-node
+          env:
+            {{- range .Values.env }}
+            - name: {{ .identifier }}
+              value: {{ .value | quote }}
+            {{- end }}
+          volumeMounts:
+            - name: elasticsearch-mount
+              mountPath: /usr/share/elasticsearch/data
+      volumes:
+        - name: elasticsearch-mount
+          hostPath:
+            path: {{ $.Values.storage.mongo.hostPath }}

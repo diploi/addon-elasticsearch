@@ -1,0 +1,13 @@
+diploiVersion: v1.0
+type: addon
+name: Elasticsearch
+description: Official Elasticsearch addon for Diploi.
+
+logs:
+  - name: Elasticsearch Log
+    type: log
+    labelSelector: app=elasticsearch
+
+storage:
+  - identifier: elasticsearch
+    sizeMiB: 6144
