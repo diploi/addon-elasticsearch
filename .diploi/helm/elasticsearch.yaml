@@ -33,4 +33,4 @@ spec:
       volumes:
         - name: elasticsearch-mount
           hostPath:
-            path: {{ $.Values.storage.mongo.hostPath }}
+            path: {{ $.Values.storage.elasticsearch.hostPath }}
