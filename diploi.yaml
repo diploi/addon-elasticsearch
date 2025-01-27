@@ -3,6 +3,11 @@ type: addon
 name: Elasticsearch
 description: Official Elasticsearch addon for Diploi.
 
+connectionStrings:
+  - name: Connection URI
+    value: https://elasticsearch.${DIPLOI_NAMESPACE}:9200
+    description: This connection URI is for components within the deployment and is inaccessible externally.
+
 logs:
   - name: Elasticsearch Log
     type: log
