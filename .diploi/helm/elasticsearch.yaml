@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: elasticsearch
-          image: elasticsearch:8.16.1
+          image: {{ .Values.images.elasticsearch }}
           imagePullPolicy: Always
           ports:
             - containerPort: 9200
