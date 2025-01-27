@@ -13,6 +13,10 @@ logs:
     type: log
     labelSelector: app=elasticsearch
 
+images:
+  - identifier: app
+    prebuildImage: elasticsearch:8.16.1
+
 storage:
   - identifier: elasticsearch
     sizeMiB: 6144
