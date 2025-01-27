@@ -15,7 +15,7 @@ logs:
 
 images:
   - identifier: app
-    prebuildImage: elasticsearch:8.16.1
+    image: elasticsearch:8.16.1
 
 storage:
   - identifier: elasticsearch
