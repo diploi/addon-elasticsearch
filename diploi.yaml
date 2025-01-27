@@ -14,7 +14,7 @@ logs:
     labelSelector: app=elasticsearch
 
 images:
-  - identifier: app
+  - identifier: elasticsearch
     image: elasticsearch:8.16.1
 
 storage:
